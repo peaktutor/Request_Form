@@ -1,6 +1,4 @@
-﻿/* Advanced Form Styling - Research-Backed UX Patterns */
-
-.requirements-form {
+﻿.requirements-form {
   position: relative;
   min-height: 600px;
 }
@@ -8,18 +6,45 @@
 .form-step {
   display: none;
   padding: var(--space-10) var(--space-8);
-  animation: fadeIn var(--transition-normal) ease-out;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .form-step.active {
   display: block;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Cool Step Headers with Gradient Effects
+   ========================================================================== */
+
 .step-header {
   text-align: center;
   margin-bottom: var(--space-10);
   padding-bottom: var(--space-6);
-  border-bottom: 1px solid var(--neutral-200);
+  position: relative;
+}
+
+.step-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+  border-radius: 2px;
 }
 
 .step-title {
@@ -31,19 +56,39 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-4);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .step-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
   color: var(--neutral-0);
   border-radius: 50%;
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.step-number::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 .step-description {
@@ -53,6 +98,10 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
+/* ==========================================================================
+   Cool Form Grid with Glassmorphism
+   ========================================================================== */
 
 .form-grid {
   display: grid;
@@ -70,16 +119,37 @@
 }
 
 .form-section {
-  background: var(--neutral-50);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   border-radius: var(--border-radius-xl);
   padding: var(--space-8);
-  border: 1px solid var(--neutral-200);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
 }
 
 .form-section:hover {
-  border-color: var(--primary-300);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.form-section:hover::before {
+  opacity: 1;
 }
 
 .section-title {
@@ -87,6 +157,14 @@
   font-weight: var(--font-semibold);
   color: var(--neutral-800);
   margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.section-title::before {
+  content: '✨';
+  font-size: var(--text-base);
 }
 
 .section-description {
@@ -96,8 +174,16 @@
   line-height: var(--leading-relaxed);
 }
 
+/* ==========================================================================
+   Field Groups with Enhanced Styling
+   ========================================================================== */
+
 .field-group {
   margin-bottom: var(--space-6);
+}
+
+.field-group:last-child {
+  margin-bottom: 0;
 }
 
 .field-label {
@@ -120,22 +206,31 @@
   color: var(--neutral-500);
   font-weight: var(--font-normal);
   margin-left: var(--space-2);
+  background: var(--warning-50);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--warning-200);
 }
+
+/* ==========================================================================
+   Enhanced Input Fields with Cool Effects
+   ========================================================================== */
 
 .field-input,
 .field-select,
 .field-textarea {
   width: 100%;
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-4) var(--space-4);
   font-size: var(--text-base);
   font-family: var(--font-family-primary);
   line-height: var(--leading-normal);
   color: var(--neutral-700);
-  background: var(--neutral-0);
+  background: rgba(255, 255, 255, 0.9);
   border: 2px solid var(--neutral-300);
-  border-radius: var(--border-radius);
-  transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
 }
 
 .field-input:focus,
@@ -143,24 +238,72 @@
 .field-textarea:focus {
   outline: none;
   border-color: var(--primary-500);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: var(--neutral-0);
+  transform: translateY(-1px);
 }
 
+.field-input:hover,
+.field-select:hover,
+.field-textarea:hover {
+  border-color: var(--primary-400);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.field-input::placeholder,
+.field-textarea::placeholder {
+  color: var(--neutral-400);
+  font-style: italic;
+}
+
+/* Cool validation states */
+.field-input.valid,
+.field-select.valid,
+.field-textarea.valid {
+  border-color: var(--success-500);
+  background: linear-gradient(135deg, var(--success-50), var(--neutral-0));
+}
+
+.field-input.error,
+.field-select.error,
+.field-textarea.error {
+  border-color: var(--error-500);
+  background: linear-gradient(135deg, var(--error-50), var(--neutral-0));
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* Textarea specific styling */
 .field-textarea {
   resize: vertical;
   min-height: 120px;
   font-family: var(--font-family-primary);
 }
 
+.field-textarea:focus {
+  min-height: 150px;
+  transition: min-height var(--transition-normal);
+}
+
+/* Select field styling */
 .field-select {
   cursor: pointer;
-  appearance: none;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%234b5563"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>');
   background-repeat: no-repeat;
   background-position: right var(--space-3) center;
   background-size: 1.25rem;
-  padding-right: var(--space-10);
+  appearance: none;
+  padding-right: var(--space-12);
 }
+
+/* ==========================================================================
+   FIXED: Radio Buttons with Working Visual States
+   ========================================================================== */
 
 .radio-group {
   display: flex;
@@ -173,19 +316,38 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4);
-  background: var(--neutral-0);
+  background: rgba(255, 255, 255, 0.8);
   border: 2px solid var(--neutral-200);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   position: relative;
+  overflow: hidden;
+}
+
+.radio-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+  transition: left var(--transition-normal);
 }
 
 .radio-option:hover {
   border-color: var(--primary-400);
   background: var(--primary-50);
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
 }
 
+.radio-option:hover::before {
+  left: 100%;
+}
+
+/* FIXED: Proper radio button selection states */
 .radio-option input[type="radio"] {
   position: absolute;
   opacity: 0;
@@ -193,16 +355,65 @@
   height: 0;
 }
 
+.radio-option input[type="radio"]:checked + .radio-button {
+  border-color: var(--primary-600);
+  background: var(--primary-600);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.radio-option input[type="radio"]:checked + .radio-button::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-label {
+  color: var(--primary-700);
+  font-weight: var(--font-semibold);
+}
+
+.radio-option:has(input:checked) {
+  border-color: var(--primary-500);
+  background: linear-gradient(135deg, var(--primary-50), rgba(255, 255, 255, 0.9));
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
+  transform: translateX(8px);
+}
+
 .radio-button {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 2px solid var(--neutral-400);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid var(--neutral-400);
   border-radius: 50%;
   background: var(--neutral-0);
   position: relative;
   flex-shrink: 0;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
 }
+
+.radio-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--neutral-0);
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+  opacity: 0;
+}
+
+.radio-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--neutral-700);
+  line-height: var(--leading-normal);
+  transition: all var(--transition-normal);
+}
+
+/* ==========================================================================
+   FIXED: Checkboxes with Working Visual States
+   ========================================================================== */
 
 .checkbox-group {
   display: grid;
@@ -215,14 +426,38 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
-  background: var(--neutral-0);
+  background: rgba(255, 255, 255, 0.8);
   border: 2px solid var(--neutral-200);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   position: relative;
+  overflow: hidden;
 }
 
+.checkbox-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+  transition: left var(--transition-normal);
+}
+
+.checkbox-option:hover {
+  border-color: var(--primary-400);
+  background: var(--primary-50);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+}
+
+.checkbox-option:hover::before {
+  left: 100%;
+}
+
+/* FIXED: Proper checkbox selection states */
 .checkbox-option input[type="checkbox"] {
   position: absolute;
   opacity: 0;
@@ -230,29 +465,115 @@
   height: 0;
 }
 
+.checkbox-option input[type="checkbox"]:checked + .checkbox-button {
+  border-color: var(--primary-600);
+  background: var(--primary-600);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.checkbox-option input[type="checkbox"]:checked + .checkbox-button::after {
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+}
+
+.checkbox-option input[type="checkbox"]:checked ~ .checkbox-label {
+  color: var(--primary-700);
+  font-weight: var(--font-semibold);
+}
+
+.checkbox-option:has(input:checked) {
+  border-color: var(--primary-500);
+  background: linear-gradient(135deg, var(--primary-50), rgba(255, 255, 255, 0.9));
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
+  transform: translateY(-4px);
+}
+
 .checkbox-button {
-  width: 1.25rem;
-  height: 1.25rem;
-  border: 2px solid var(--neutral-400);
-  border-radius: var(--border-radius-sm);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid var(--neutral-400);
+  border-radius: var(--border-radius);
   background: var(--neutral-0);
   position: relative;
   flex-shrink: 0;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
 }
+
+.checkbox-button::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--neutral-0);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg) scale(0);
+  transition: all var(--transition-normal);
+  opacity: 0;
+}
+
+.checkbox-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--neutral-700);
+  line-height: var(--leading-normal);
+  transition: all var(--transition-normal);
+}
+
+/* ==========================================================================
+   Cool Slider Controls
+   ========================================================================== */
 
 .slider-container {
   margin: var(--space-4) 0;
+  padding: var(--space-4);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--neutral-200);
 }
 
 .slider {
   width: 100%;
-  height: 6px;
+  height: 8px;
   border-radius: var(--border-radius);
-  background: var(--neutral-200);
+  background: linear-gradient(90deg, var(--neutral-200), var(--neutral-300));
   outline: none;
   appearance: none;
   cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  cursor: pointer;
+  border: 3px solid var(--neutral-0);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.slider::-webkit-slider-thumb:active {
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  cursor: pointer;
+  border: 3px solid var(--neutral-0);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
   transition: all var(--transition-fast);
 }
 
@@ -260,23 +581,60 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: var(--space-2);
+  margin-top: var(--space-3);
   font-size: var(--text-sm);
   color: var(--neutral-500);
 }
+
+.slider-labels span:nth-child(2) {
+  font-weight: var(--font-bold);
+  color: var(--primary-600);
+  background: var(--primary-50);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-200);
+}
+
+/* ==========================================================================
+   Enhanced Field Enhancements
+   ========================================================================== */
 
 .field-enhancement {
   display: flex;
   align-items: flex-start;
   gap: var(--space-2);
-  margin-top: var(--space-2);
-  padding: var(--space-3);
-  background: var(--primary-50);
+  margin-top: var(--space-3);
+  padding: var(--space-4);
+  background: linear-gradient(135deg, var(--primary-50), rgba(255, 255, 255, 0.8));
   border: 1px solid var(--primary-200);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   font-size: var(--text-sm);
   color: var(--primary-800);
   line-height: var(--leading-relaxed);
+  position: relative;
+  overflow: hidden;
+}
+
+.field-enhancement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary-500), var(--primary-600));
+}
+
+.field-enhancement .icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: var(--text-base);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .character-count {
@@ -284,32 +642,95 @@
   margin-top: var(--space-2);
   font-size: var(--text-xs);
   color: var(--neutral-500);
+  padding: var(--space-1) var(--space-2);
+  background: var(--neutral-100);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--neutral-200);
+  display: inline-block;
+  transition: all var(--transition-fast);
 }
+
+.character-count.warning {
+  color: var(--warning-700);
+  background: var(--warning-50);
+  border-color: var(--warning-200);
+}
+
+.character-count.over-limit {
+  color: var(--error-700);
+  background: var(--error-50);
+  border-color: var(--error-200);
+  animation: pulse 1s infinite;
+}
+
+/* ==========================================================================
+   Cool Error Messages
+   ========================================================================== */
 
 .field-error {
   display: none;
   margin-top: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  background: var(--error-50);
+  padding: var(--space-3) var(--space-4);
+  background: linear-gradient(135deg, var(--error-50), rgba(255, 255, 255, 0.9));
   border: 1px solid var(--error-200);
+  border-left: 4px solid var(--error-500);
   border-radius: var(--border-radius);
   font-size: var(--text-sm);
   color: var(--error-700);
   line-height: var(--leading-normal);
+  position: relative;
+  overflow: hidden;
 }
 
 .field-error.show {
   display: block;
-  animation: fadeIn var(--transition-fast) ease-out;
+  animation: slideInDown 0.3s ease-out;
 }
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.field-error::before {
+  content: '⚠️ ';
+  margin-right: var(--space-1);
+}
+
+/* ==========================================================================
+   Cool Form Navigation
+   ========================================================================== */
 
 .form-navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--space-8);
-  background: var(--neutral-50);
+  background: linear-gradient(135deg, var(--neutral-50), rgba(255, 255, 255, 0.8));
   border-top: 1px solid var(--neutral-200);
+  gap: var(--space-4);
+  position: relative;
+}
+
+.form-navigation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600), var(--primary-700));
+}
+
+.nav-info {
+  display: flex;
+  align-items: center;
   gap: var(--space-4);
 }
 
@@ -320,7 +741,37 @@
   font-size: var(--text-sm);
   color: var(--success-600);
   font-weight: var(--font-medium);
+  padding: var(--space-2) var(--space-3);
+  background: var(--success-50);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--success-200);
+  transition: all var(--transition-fast);
 }
+
+.save-status.saving {
+  color: var(--warning-700);
+  background: var(--warning-50);
+  border-color: var(--warning-200);
+}
+
+.save-status.error {
+  color: var(--error-700);
+  background: var(--error-50);
+  border-color: var(--error-200);
+  animation: shake 0.5s ease-in-out;
+}
+
+.save-status .icon {
+  animation: spin 2s linear infinite;
+}
+
+.save-status:not(.saving) .icon {
+  animation: none;
+}
+
+/* ==========================================================================
+   Mobile Touch-Friendly Optimizations
+   ========================================================================== */
 
 @media (max-width: 767px) {
   .form-step {
@@ -332,6 +783,43 @@
     gap: var(--space-6);
   }
   
+  .form-section {
+    padding: var(--space-6);
+  }
+  
+  .step-title {
+    font-size: var(--text-2xl);
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .step-number {
+    width: 3rem;
+    height: 3rem;
+    font-size: var(--text-base);
+  }
+  
+  /* Touch-friendly form controls */
+  .field-input,
+  .field-select,
+  .field-textarea {
+    min-height: 48px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: var(--space-4);
+  }
+  
+  .radio-option,
+  .checkbox-option {
+    min-height: 48px;
+    padding: var(--space-4);
+  }
+  
+  .radio-button,
+  .checkbox-button {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
   .checkbox-group {
     grid-template-columns: 1fr;
   }
@@ -340,5 +828,74 @@
     flex-direction: column;
     gap: var(--space-4);
     padding: var(--space-6) var(--space-4);
+  }
+  
+  .nav-info {
+    order: -1;
+  }
+}
+
+/* ==========================================================================
+   Cool Loading States and Micro-Interactions
+   ========================================================================== */
+
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-200);
+  border-radius: 50%;
+  border-top-color: var(--primary-600);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Cool focus effects for accessibility */
+.radio-option:focus-within,
+.checkbox-option:focus-within {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .radio-option,
+  .checkbox-option {
+    border-width: 3px;
+  }
+  
+  .field-input,
+  .field-select,
+  .field-textarea {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .step-number::before,
+  .field-enhancement .icon,
+  .save-status .icon,
+  .character-count.over-limit {
+    animation: none;
+  }
+  
+  .radio-option:hover,
+  .checkbox-option:hover,
+  .form-section:hover {
+    transform: none;
   }
 }

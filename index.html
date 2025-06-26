@@ -48,7 +48,7 @@
             <div class="progress-header">
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="progressBar">
-                        <div class="progress-fill" style="width: 15%"></div>
+                        <div class="progress-fill" style="width: 16%"></div>
                     </div>
                     <span class="progress-text">
                         <span id="currentStep">1</span> of <span id="totalSteps">6</span> sections
@@ -56,7 +56,7 @@
                 </div>
                 <div class="time-estimate">
                     <span class="icon">⏱️</span>
-                    <span id="timeEstimate">8-12 minutes remaining</span>
+                    <span id="timeEstimate">12-15 minutes remaining</span>
                 </div>
             </div>
 
@@ -397,8 +397,671 @@
                         </div>
                     </section>
 
-                    <!-- Additional steps would continue here... -->
-                    
+                    <!-- Step 3: Brand Identity & Visual Design -->
+                    <section class="form-step" id="step-3" data-step="3">
+                        <div class="step-header">
+                            <h2 class="step-title">
+                                <span class="step-number">03</span>
+                                Brand Identity & Visual Design 🎨
+                            </h2>
+                            <p class="step-description">
+                                Creating a visual identity that resonates with your audience
+                            </p>
+                        </div>
+
+                        <div class="form-grid">
+                            <!-- Visual Preferences -->
+                            <div class="form-section">
+                                <h3 class="section-title">Visual Style Preferences</h3>
+                                
+                                <div class="field-group">
+                                    <label for="visualStyle" class="field-label">
+                                        Preferred Visual Style
+                                    </label>
+                                    <select id="visualStyle" name="visualStyle" class="field-select">
+                                        <option value="">Select your preferred style</option>
+                                        <option value="modern-minimal">Modern & Minimal</option>
+                                        <option value="professional-corporate">Professional & Corporate</option>
+                                        <option value="creative-artistic">Creative & Artistic</option>
+                                        <option value="friendly-approachable">Friendly & Approachable</option>
+                                        <option value="bold-edgy">Bold & Edgy</option>
+                                        <option value="classic-traditional">Classic & Traditional</option>
+                                        <option value="playful-fun">Playful & Fun</option>
+                                        <option value="luxury-premium">Luxury & Premium</option>
+                                    </select>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="colorPreferences" class="field-label">
+                                        Color Preferences
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="colorPreferences" value="blue">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Blue (Trust, Professional)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="colorPreferences" value="green">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Green (Growth, Natural)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="colorPreferences" value="red">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Red (Energy, Urgency)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="colorPreferences" value="orange">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Orange (Creative, Friendly)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="colorPreferences" value="purple">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Purple (Luxury, Innovation)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="colorPreferences" value="neutral">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Neutral (Sophisticated, Timeless)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="brandPersonality" class="field-label">
+                                        Brand Personality Traits
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="brandPersonality" value="trustworthy">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Trustworthy</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="brandPersonality" value="innovative">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Innovative</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="brandPersonality" value="friendly">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Friendly</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="brandPersonality" value="professional">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Professional</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="brandPersonality" value="creative">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Creative</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="brandPersonality" value="reliable">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Reliable</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Brand Deep Dive -->
+                            <div class="form-section">
+                                <h3 class="section-title">Brand Deep Dive</h3>
+                                
+                                <div class="field-group">
+                                    <label for="brandStory" class="field-label">
+                                        Complete Brand Story & Values
+                                    </label>
+                                    <textarea 
+                                        id="brandStory" 
+                                        name="brandStory" 
+                                        class="field-textarea" 
+                                        rows="5"
+                                        placeholder="Your brand's personality, core values, mission, vision, company culture, and the emotional connection you want with customers..."
+                                    ></textarea>
+                                    <div class="field-enhancement">
+                                        <span class="icon">🎨</span>
+                                        Enables: Brand voice development, visual identity creation, emotional connection strategy
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="visualInspiration" class="field-label">
+                                        Visual Inspiration & References
+                                    </label>
+                                    <textarea 
+                                        id="visualInspiration" 
+                                        name="visualInspiration" 
+                                        class="field-textarea" 
+                                        rows="4"
+                                        placeholder="Websites, brands, or designs you love and why. Include URLs and describe what specifically appeals to you about their visual style..."
+                                    ></textarea>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="brandAssets" class="field-label">
+                                        Existing Brand Assets
+                                    </label>
+                                    <textarea 
+                                        id="brandAssets" 
+                                        name="brandAssets" 
+                                        class="field-textarea" 
+                                        rows="3"
+                                        placeholder="Current logos, color schemes, fonts, marketing materials, brand guidelines, photography style, etc."
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 4: Technical Requirements -->
+                    <section class="form-step" id="step-4" data-step="4">
+                        <div class="step-header">
+                            <h2 class="step-title">
+                                <span class="step-number">04</span>
+                                Technical Requirements ⚡
+                            </h2>
+                            <p class="step-description">
+                                Defining the technical foundation and functionality needed
+                            </p>
+                        </div>
+
+                        <div class="form-grid">
+                            <!-- Functionality Requirements -->
+                            <div class="form-section">
+                                <h3 class="section-title">Core Functionality</h3>
+                                
+                                <div class="field-group">
+                                    <label for="requiredFeatures" class="field-label">
+                                        Required Website Features
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="contact-forms">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Contact Forms</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="blog">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Blog / News Section</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="ecommerce">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">E-commerce / Online Store</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="booking">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Booking / Scheduling</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="user-accounts">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">User Accounts / Login</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="search">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Search Functionality</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="multilingual">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Multi-language Support</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="requiredFeatures" value="social-media">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Social Media Integration</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="performanceGoals" class="field-label">
+                                        Performance Expectations
+                                    </label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="performanceGoals" value="basic">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Basic - Fast loading is nice to have</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="performanceGoals" value="optimized">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Optimized - Sub-3 second loading required</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="performanceGoals" value="premium">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Premium - Sub-2 second, mobile-optimized</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="performanceGoals" value="enterprise">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Enterprise - Sub-1 second, global CDN</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="mobileImportance" class="field-label">
+                                        Mobile Experience Priority
+                                    </label>
+                                    <div class="slider-container">
+                                        <input 
+                                            type="range" 
+                                            id="mobileImportance" 
+                                            name="mobileImportance" 
+                                            min="1" 
+                                            max="10" 
+                                            value="8"
+                                            class="slider"
+                                        >
+                                        <div class="slider-labels">
+                                            <span>Low Priority</span>
+                                            <span id="mobileValue">Very Important</span>
+                                            <span>Critical</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Technical Details -->
+                            <div class="form-section">
+                                <h3 class="section-title">Technical Specifications</h3>
+                                
+                                <div class="field-group">
+                                    <label for="integrationRequirements" class="field-label">
+                                        Integration Requirements
+                                    </label>
+                                    <textarea 
+                                        id="integrationRequirements" 
+                                        name="integrationRequirements" 
+                                        class="field-textarea" 
+                                        rows="4"
+                                        placeholder="CRM systems, payment processors, email marketing tools, analytics platforms, social media, or other third-party services that need to connect..."
+                                    ></textarea>
+                                    <div class="field-enhancement">
+                                        <span class="icon">🔗</span>
+                                        Required for: API integrations, data synchronization, workflow automation
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="securityRequirements" class="field-label">
+                                        Security & Compliance Needs
+                                    </label>
+                                    <textarea 
+                                        id="securityRequirements" 
+                                        name="securityRequirements" 
+                                        class="field-textarea" 
+                                        rows="3"
+                                        placeholder="GDPR compliance, HIPAA requirements, SSL certificates, user data protection, industry-specific security standards..."
+                                    ></textarea>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="hostingPreferences" class="field-label">
+                                        Hosting & Maintenance Preferences
+                                    </label>
+                                    <select id="hostingPreferences" name="hostingPreferences" class="field-select">
+                                        <option value="">Select hosting preference</option>
+                                        <option value="managed">Fully Managed - We handle everything</option>
+                                        <option value="shared">Shared Hosting - Cost-effective solution</option>
+                                        <option value="dedicated">Dedicated Server - High performance</option>
+                                        <option value="cloud">Cloud Hosting - Scalable and flexible</option>
+                                        <option value="existing">Use Existing Hosting</option>
+                                        <option value="undecided">Need Recommendations</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 5: Content Strategy -->
+                    <section class="form-step" id="step-5" data-step="5">
+                        <div class="step-header">
+                            <h2 class="step-title">
+                                <span class="step-number">05</span>
+                                Content Strategy 📝
+                            </h2>
+                            <p class="step-description">
+                                Planning content that converts visitors into customers
+                            </p>
+                        </div>
+
+                        <div class="form-grid">
+                            <!-- Content Planning -->
+                            <div class="form-section">
+                                <h3 class="section-title">Content Requirements</h3>
+                                
+                                <div class="field-group">
+                                    <label for="contentGoals" class="field-label">
+                                        Primary Content Goals
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentGoals" value="educate">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Educate Customers</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentGoals" value="build-trust">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Build Trust & Credibility</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentGoals" value="generate-leads">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Generate Leads</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentGoals" value="drive-sales">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Drive Sales</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentGoals" value="seo-ranking">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Improve SEO Rankings</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentGoals" value="showcase-expertise">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Showcase Expertise</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="contentTypes" class="field-label">
+                                        Preferred Content Types
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentTypes" value="blog-articles">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Blog Articles</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentTypes" value="case-studies">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Case Studies</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentTypes" value="videos">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Videos</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentTypes" value="infographics">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Infographics</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentTypes" value="testimonials">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Customer Testimonials</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contentTypes" value="faqs">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">FAQs & Guides</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="contentUpdateFrequency" class="field-label">
+                                        Content Update Frequency
+                                    </label>
+                                    <select id="contentUpdateFrequency" name="contentUpdateFrequency" class="field-select">
+                                        <option value="">How often will you update content?</option>
+                                        <option value="daily">Daily - Very active content strategy</option>
+                                        <option value="weekly">Weekly - Regular fresh content</option>
+                                        <option value="monthly">Monthly - Periodic updates</option>
+                                        <option value="quarterly">Quarterly - Seasonal updates</option>
+                                        <option value="rarely">Rarely - Static content mostly</option>
+                                        <option value="unknown">Not sure yet</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- SEO & Marketing -->
+                            <div class="form-section">
+                                <h3 class="section-title">SEO & Marketing Strategy</h3>
+                                
+                                <div class="field-group">
+                                    <label for="targetKeywords" class="field-label">
+                                        Target Keywords & Search Terms
+                                    </label>
+                                    <textarea 
+                                        id="targetKeywords" 
+                                        name="targetKeywords" 
+                                        class="field-textarea" 
+                                        rows="4"
+                                        placeholder="Keywords your customers use to find businesses like yours. Include industry terms, location-based keywords, and service-specific phrases..."
+                                    ></textarea>
+                                    <div class="field-enhancement">
+                                        <span class="icon">🔍</span>
+                                        Enables: SEO strategy, content optimization, Google ranking improvements
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="contentResources" class="field-label">
+                                        Existing Content & Resources
+                                    </label>
+                                    <textarea 
+                                        id="contentResources" 
+                                        name="contentResources" 
+                                        class="field-textarea" 
+                                        rows="3"
+                                        placeholder="Existing blog posts, marketing materials, brochures, videos, photos, case studies, or other content we can repurpose..."
+                                    ></textarea>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="contentChallenges" class="field-label">
+                                        Content Creation Challenges
+                                    </label>
+                                    <textarea 
+                                        id="contentChallenges" 
+                                        name="contentChallenges" 
+                                        class="field-textarea" 
+                                        rows="3"
+                                        placeholder="What challenges do you face with content creation? Time constraints, writing skills, photography, technical knowledge, etc.?"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 6: Timeline & Budget -->
+                    <section class="form-step" id="step-6" data-step="6">
+                        <div class="step-header">
+                            <h2 class="step-title">
+                                <span class="step-number">06</span>
+                                Timeline & Budget 📅
+                            </h2>
+                            <p class="step-description">
+                                Planning your project timeline and investment
+                            </p>
+                        </div>
+
+                        <div class="form-grid">
+                            <!-- Timeline Planning -->
+                            <div class="form-section">
+                                <h3 class="section-title">Project Timeline</h3>
+                                
+                                <div class="field-group">
+                                    <label for="launchUrgency" class="field-label">
+                                        Launch Timeline Preference
+                                    </label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="launchUrgency" value="asap">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">ASAP - Within 2-4 weeks</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="launchUrgency" value="standard">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Standard - 1-2 months</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="launchUrgency" value="planned">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Planned - 2-3 months</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="launchUrgency" value="flexible">
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Flexible - Quality over speed</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="launchDrivers" class="field-label">
+                                        What's Driving Your Timeline?
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="launchDrivers" value="business-launch">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">New Business Launch</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="launchDrivers" value="marketing-campaign">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Marketing Campaign Launch</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="launchDrivers" value="competitive-pressure">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Competitive Pressure</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="launchDrivers" value="seasonal-timing">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Seasonal Business Timing</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="launchDrivers" value="current-site-issues">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Current Site Problems</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="launchDrivers" value="funding-timeline">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Funding/Budget Timeline</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="projectPhasing" class="field-label">
+                                        Project Approach Preference
+                                    </label>
+                                    <select id="projectPhasing" name="projectPhasing" class="field-select">
+                                        <option value="">How would you like to approach the project?</option>
+                                        <option value="all-at-once">Complete Website - All features at launch</option>
+                                        <option value="mvp-first">MVP First - Launch basic, add features later</option>
+                                        <option value="phased">Phased Approach - Sections launched incrementally</option>
+                                        <option value="redesign">Website Redesign - Improving existing site</option>
+                                        <option value="migration">Platform Migration - Moving from current system</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Investment Planning -->
+                            <div class="form-section">
+                                <h3 class="section-title">Investment Planning</h3>
+                                
+                                <div class="field-group">
+                                    <label for="budgetRange" class="field-label">
+                                        Project Budget Range
+                                    </label>
+                                    <select id="budgetRange" name="budgetRange" class="field-select">
+                                        <option value="">Select your budget range</option>
+                                        <option value="under-5k">Under $5,000</option>
+                                        <option value="5k-10k">$5,000 - $10,000</option>
+                                        <option value="10k-25k">$10,000 - $25,000</option>
+                                        <option value="25k-50k">$25,000 - $50,000</option>
+                                        <option value="50k-100k">$50,000 - $100,000</option>
+                                        <option value="over-100k">Over $100,000</option>
+                                        <option value="flexible">Flexible based on ROI</option>
+                                        <option value="need-estimate">Need help estimating</option>
+                                    </select>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="budgetPriorities" class="field-label">
+                                        Budget Allocation Priorities
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="budgetPriorities" value="design-quality">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">High-Quality Design</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="budgetPriorities" value="functionality">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Advanced Functionality</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="budgetPriorities" value="content-creation">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Professional Content Creation</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="budgetPriorities" value="seo-marketing">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">SEO & Marketing Setup</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="budgetPriorities" value="ongoing-support">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Ongoing Support & Maintenance</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="budgetPriorities" value="training">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Training & Documentation</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="additionalContext" class="field-label">
+                                        Additional Project Context
+                                    </label>
+                                    <textarea 
+                                        id="additionalContext" 
+                                        name="additionalContext" 
+                                        class="field-textarea" 
+                                        rows="4"
+                                        placeholder="Any additional context, specific requirements, concerns, or questions about the project that would help us create the perfect strategy for you..."
+                                    ></textarea>
+                                    <div class="field-enhancement">
+                                        <span class="icon">💡</span>
+                                        Final opportunity to share any important details that will improve your AI-generated strategy
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     <!-- Navigation -->
                     <div class="form-navigation">
                         <button type="button" class="btn btn-secondary" id="prevBtn" disabled>
@@ -426,10 +1089,698 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script type="module" src="assets/js/main.js"></script>
-    <script type="module" src="assets/js/form-handler.js"></script>
-    <script type="module" src="assets/js/validation.js"></script>
-    <script type="module" src="assets/js/storage.js"></script>
+    <!-- JavaScript - Single file, no modules -->
+    <script>
+    /**
+     * Complete Form Script with All 6 Steps
+     */
+
+    // Global variables
+    let currentStep = 1;
+    let totalSteps = 6;
+    let formData = {};
+    let autoSaveTimeout;
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 Complete 6-step form loaded');
+        initializeForm();
+    });
+
+    function initializeForm() {
+        console.log('🔧 Initializing complete form...');
+        
+        // Get DOM elements
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const form = document.getElementById('requirementsForm');
+
+        // Check if elements exist
+        if (!prevBtn || !nextBtn) {
+            console.error('❌ Navigation buttons not found');
+            return;
+        }
+
+        console.log('✅ Found navigation buttons');
+
+        // Add event listeners
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('⬅️ Previous button clicked');
+            goToPreviousStep();
+        });
+
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('➡️ Next button clicked');
+            goToNextStep();
+        });
+
+        // Add form field listeners
+        if (form) {
+            form.addEventListener('input', handleFieldChange);
+            form.addEventListener('change', handleFieldChange);
+            console.log('✅ Form listeners added');
+        }
+
+        // Update UI
+        updateUI();
+        
+        // Load saved data
+        loadSavedData();
+
+        console.log('✅ Complete form initialization done');
+    }
+
+    function goToNextStep() {
+        console.log('🎯 Moving to next step from', currentStep);
+        
+        // Validate current step
+        if (!validateCurrentStep()) {
+            console.log('❌ Validation failed');
+            showNotification('Please fill in all required fields correctly.', 'error');
+            return;
+        }
+
+        // Move to next step or generate results
+        if (currentStep < totalSteps) {
+            transitionToStep(currentStep + 1);
+        } else {
+            generateResults();
+        }
+    }
+
+    function goToPreviousStep() {
+        console.log('⬅️ Moving to previous step from', currentStep);
+        
+        if (currentStep > 1) {
+            transitionToStep(currentStep - 1);
+        }
+    }
+
+    function transitionToStep(stepNumber) {
+        console.log(`🔄 Transitioning from step ${currentStep} to step ${stepNumber}`);
+        
+        const currentStepEl = document.getElementById(`step-${currentStep}`);
+        const nextStepEl = document.getElementById(`step-${stepNumber}`);
+        
+        if (!currentStepEl) {
+            console.error(`❌ Current step element not found: step-${currentStep}`);
+            return;
+        }
+        
+        if (!nextStepEl) {
+            console.error(`❌ Next step element not found: step-${stepNumber}`);
+            return;
+        }
+        
+        // Switch steps
+        currentStepEl.classList.remove('active');
+        nextStepEl.classList.add('active');
+        
+        // Update current step
+        currentStep = stepNumber;
+        
+        // Update UI
+        updateUI();
+        
+        // Save progress
+        saveProgress();
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        console.log(`✅ Successfully moved to step ${stepNumber}`);
+    }
+
+    function validateCurrentStep() {
+        console.log(`🔍 Validating step ${currentStep}`);
+        
+        const currentStepEl = document.getElementById(`step-${currentStep}`);
+        if (!currentStepEl) {
+            console.log('⚠️ No step element found, skipping validation');
+            return true;
+        }
+        
+        const requiredFields = currentStepEl.querySelectorAll('[required]');
+        let isValid = true;
+        let invalidCount = 0;
+        
+        requiredFields.forEach(field => {
+            if (!validateField(field)) {
+                isValid = false;
+                invalidCount++;
+            }
+        });
+        
+        console.log(`📊 Validation result: ${isValid ? 'PASSED' : 'FAILED'} (${invalidCount} invalid fields)`);
+        return isValid;
+    }
+
+    function validateField(field) {
+        const value = field.value.trim();
+        let isValid = true;
+        let errorMessage = '';
+        
+        // Check if required field is empty
+        if (field.hasAttribute('required') && !value) {
+            isValid = false;
+            errorMessage = `${getFieldLabel(field)} is required`;
+        }
+        
+        // Update field appearance
+        updateFieldAppearance(field, isValid, errorMessage);
+        
+        return isValid;
+    }
+
+    function updateFieldAppearance(field, isValid, errorMessage) {
+        const errorEl = document.getElementById(`${field.id}-error`);
+        
+        // Remove previous classes
+        field.classList.remove('valid', 'error');
+        
+        if (isValid) {
+            field.classList.add('valid');
+            if (errorEl) {
+                errorEl.classList.remove('show');
+                errorEl.textContent = '';
+            }
+        } else {
+            field.classList.add('error');
+            if (errorEl) {
+                errorEl.classList.add('show');
+                errorEl.textContent = errorMessage;
+            }
+        }
+    }
+
+    function getFieldLabel(field) {
+        const label = document.querySelector(`label[for="${field.id}"]`);
+        if (label) {
+            return label.textContent.replace('*', '').trim();
+        }
+        return field.name || 'This field';
+    }
+
+    function handleFieldChange(event) {
+        const field = event.target;
+        if (!field.name) return;
+        
+        console.log(`📝 Field changed: ${field.name} = ${field.value}`);
+        
+        // Update form data
+        updateFormData(field);
+        
+        // Real-time validation
+        validateField(field);
+        
+        // Update UI enhancements
+        updateFieldEnhancements(field);
+        
+        // Auto-save after delay
+        clearTimeout(autoSaveTimeout);
+        autoSaveTimeout = setTimeout(() => {
+            saveProgress();
+        }, 1000);
+    }
+
+    function updateFormData(field) {
+        if (field.type === 'checkbox') {
+            const checkedBoxes = document.querySelectorAll(`[name="${field.name}"]:checked`);
+            formData[field.name] = Array.from(checkedBoxes).map(cb => cb.value);
+        } else if (field.type === 'radio') {
+            formData[field.name] = field.value;
+        } else {
+            formData[field.name] = field.value;
+        }
+        
+        console.log('💾 Form data updated:', field.name, formData[field.name]);
+    }
+
+    function updateFieldEnhancements(field) {
+        // Update character count for textareas
+        if (field.tagName === 'TEXTAREA') {
+            const countEl = document.getElementById(`${field.id}-count`);
+            if (countEl) {
+                const count = field.value.length;
+                countEl.textContent = count;
+                
+                // Color coding
+                countEl.className = 'character-count';
+                if (count > 1000) countEl.classList.add('over-limit');
+                else if (count > 500) countEl.classList.add('warning');
+            }
+        }
+        
+        // Update slider value displays
+        if (field.type === 'range') {
+            if (field.id === 'yearsInBusiness') {
+                const valueEl = document.getElementById('yearsValue');
+                if (valueEl) {
+                    const value = parseInt(field.value);
+                    valueEl.textContent = value === 0 ? 'New' : 
+                                        value === 50 ? '50+ years' : 
+                                        `${value} years`;
+                }
+            } else if (field.id === 'mobileImportance') {
+                const valueEl = document.getElementById('mobileValue');
+                if (valueEl) {
+                    const value = parseInt(field.value);
+                    const labels = ['Low Priority', 'Somewhat Important', 'Important', 'Very Important', 'Critical'];
+                    const index = Math.min(Math.floor((value - 1) / 2), labels.length - 1);
+                    valueEl.textContent = labels[index];
+                }
+            }
+        }
+    }
+
+    function updateUI() {
+        console.log('🎨 Updating UI for step', currentStep);
+        
+        // Update progress bar
+        const progress = (currentStep / totalSteps) * 100;
+        const progressFill = document.querySelector('.progress-fill');
+        if (progressFill) {
+            progressFill.style.width = `${progress}%`;
+        }
+        
+        // Update step number
+        const currentStepEl = document.getElementById('currentStep');
+        if (currentStepEl) {
+            currentStepEl.textContent = currentStep;
+        }
+        
+        // Update time estimate
+        const timeEstimate = document.getElementById('timeEstimate');
+        if (timeEstimate) {
+            const remainingSteps = totalSteps - currentStep;
+            const estimatedMinutes = remainingSteps * 2;
+            if (remainingSteps === 0) {
+                timeEstimate.textContent = 'Ready to generate results!';
+            } else {
+                timeEstimate.textContent = `${estimatedMinutes}-${estimatedMinutes + 2} minutes remaining`;
+            }
+        }
+        
+        // Update navigation buttons
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        if (prevBtn) {
+            prevBtn.disabled = currentStep === 1;
+        }
+        
+        if (nextBtn) {
+            if (currentStep === totalSteps) {
+                nextBtn.textContent = 'Generate AI Strategy →';
+                nextBtn.classList.add('btn-success');
+            } else {
+                nextBtn.textContent = 'Continue →';
+                nextBtn.classList.remove('btn-success');
+            }
+        }
+    }
+
+    function saveProgress() {
+        try {
+            const progressData = {
+                formData: formData,
+                currentStep: currentStep,
+                timestamp: Date.now()
+            };
+            
+            localStorage.setItem('websiteRequirementsForm', JSON.stringify(progressData));
+            updateSaveStatus('saved');
+            console.log('💾 Progress saved');
+            
+        } catch (error) {
+            console.error('❌ Save failed:', error);
+            updateSaveStatus('error');
+        }
+    }
+
+    function loadSavedData() {
+        try {
+            const saved = localStorage.getItem('websiteRequirementsForm');
+            if (saved) {
+                const data = JSON.parse(saved);
+                formData = data.formData || {};
+                currentStep = data.currentStep || 1;
+                
+                // Populate form fields
+                Object.entries(formData).forEach(([fieldName, value]) => {
+                    const field = document.querySelector(`[name="${fieldName}"]`);
+                    if (field) {
+                        if (field.type === 'checkbox' || field.type === 'radio') {
+                            if (Array.isArray(value)) {
+                                value.forEach(val => {
+                                    const specificField = document.querySelector(`[name="${fieldName}"][value="${val}"]`);
+                                    if (specificField) specificField.checked = true;
+                                });
+                            } else {
+                                const specificField = document.querySelector(`[name="${fieldName}"][value="${value}"]`);
+                                if (specificField) specificField.checked = true;
+                            }
+                        } else {
+                            field.value = value;
+                        }
+                    }
+                });
+                
+                // Show the correct step
+                transitionToStep(currentStep);
+                
+                console.log('📦 Loaded saved data:', Object.keys(formData).length, 'fields');
+            }
+        } catch (error) {
+            console.error('❌ Failed to load saved data:', error);
+        }
+    }
+
+    function updateSaveStatus(status) {
+        const saveStatus = document.getElementById('saveStatus');
+        if (!saveStatus) return;
+        
+        switch (status) {
+            case 'saved':
+                saveStatus.innerHTML = '<span class="icon">✅</span> Auto-saved';
+                saveStatus.className = 'save-status';
+                break;
+            case 'error':
+                saveStatus.innerHTML = '<span class="icon">⚠️</span> Save failed';
+                saveStatus.className = 'save-status error';
+                break;
+        }
+    }
+
+    function generateResults() {
+        console.log('🎯 Generating comprehensive results...');
+        
+        // Generate all prompts
+        const prompts = {
+            business: generateBusinessPrompt(),
+            audience: generateAudiencePrompt(),
+            brand: generateBrandPrompt(),
+            technical: generateTechnicalPrompt(),
+            content: generateContentPrompt(),
+            timeline: generateTimelinePrompt(),
+            master: generateMasterPrompt(),
+            metadata: {
+                generatedAt: new Date().toISOString(),
+                completedFields: Object.keys(formData).length,
+                qualityScore: calculateCompletionScore()
+            }
+        };
+        
+        console.log('🤖 Generated Complete AI Strategy:', prompts);
+        
+        // Save results
+        try {
+            localStorage.setItem('websiteRequirementsResults', JSON.stringify({
+                formData: formData,
+                prompts: prompts,
+                timestamp: new Date().toISOString()
+            }));
+        } catch (error) {
+            console.error('❌ Failed to save results:', error);
+        }
+        
+        showNotification('🎉 Complete AI Strategy Generated! Check browser console for all prompts.', 'success');
+    }
+
+    // AI Prompt Generation Functions
+    function generateBusinessPrompt() {
+        return `
+🏢 COMPREHENSIVE BUSINESS STRATEGY ANALYSIS for ${formData.companyName || '[Company]'}
+
+BUSINESS FOUNDATION:
+- Company: ${formData.companyName || '[Not specified]'}
+- Industry: ${formData.industry || '[Not specified]'}
+- Business Size: ${formData.businessSize || '[Not specified]'}
+- Primary Goal: ${formData.primaryGoal || '[Not specified]'}
+- Years in Business: ${formData.yearsInBusiness || '5'}
+
+STRATEGIC CONTEXT:
+Business Story: ${formData.businessStory || '[Not provided]'}
+Competitive Intelligence: ${formData.competitiveIntelligence || '[Not provided]'}
+Business Model: ${formData.businessModel || '[Not provided]'}
+
+RESEARCH & STRATEGY REQUIREMENTS:
+1. Conduct comprehensive ${formData.industry || 'industry'} market analysis
+2. Develop competitive positioning strategy based on provided intelligence
+3. Create scalable business model optimization recommendations
+4. Design growth strategy aligned with ${formData.primaryGoal || 'primary business goal'}
+5. Generate ROI projections and success metrics framework
+
+DELIVERABLES:
+✅ Market opportunity analysis with TAM/SAM calculations
+✅ Competitive advantage framework with differentiation strategy
+✅ Revenue optimization recommendations with scalability planning
+✅ 3-year strategic growth roadmap with milestone targets
+✅ Risk assessment and mitigation strategy for identified challenges
+        `;
+    }
+
+    function generateAudiencePrompt() {
+        const customerAge = Array.isArray(formData.customerAge) ? formData.customerAge.join(', ') : (formData.customerAge || '[Not specified]');
+        const contactPreference = Array.isArray(formData.contactPreference) ? formData.contactPreference.join(', ') : (formData.contactPreference || '[Not specified]');
+        
+        return `
+👥 COMPREHENSIVE USER EXPERIENCE & AUDIENCE STRATEGY
+
+CUSTOMER DEMOGRAPHICS:
+- Age Groups: ${customerAge}
+- Tech Comfort: ${formData.techSavviness || '[Not specified]'}
+- Contact Preferences: ${contactPreference}
+
+DETAILED CUSTOMER ANALYSIS:
+Customer Profiles: ${formData.customerProfiles || '[Not provided]'}
+Pain Points: ${formData.customerPainPoints || '[Not provided]'}
+Customer Journey: ${formData.customerJourney || '[Not provided]'}
+
+UX STRATEGY REQUIREMENTS:
+1. Create detailed psychological user personas with behavioral triggers
+2. Map complete customer journey with conversion optimization opportunities
+3. Design user experience strategy based on ${formData.techSavviness || 'customer tech comfort'}
+4. Develop accessibility framework for ${customerAge} demographics
+5. Create conversion optimization strategy aligned with ${contactPreference} preferences
+
+DELIVERABLES:
+✅ 3-5 detailed user personas with psychological profiles and decision triggers
+✅ Complete customer journey mapping with touchpoint optimization
+✅ UX/UI strategy with wireframes and interaction design recommendations
+✅ Conversion rate optimization plan with A/B testing framework
+✅ Accessibility compliance strategy (WCAG 2.1 AA+) for target demographics
+        `;
+    }
+
+    function generateBrandPrompt() {
+        const colorPrefs = Array.isArray(formData.colorPreferences) ? formData.colorPreferences.join(', ') : (formData.colorPreferences || '[Not specified]');
+        const brandPersonality = Array.isArray(formData.brandPersonality) ? formData.brandPersonality.join(', ') : (formData.brandPersonality || '[Not specified]');
+        
+        return `
+🎨 COMPREHENSIVE BRAND IDENTITY & VISUAL DESIGN STRATEGY
+
+BRAND SPECIFICATIONS:
+- Visual Style: ${formData.visualStyle || '[Not specified]'}
+- Color Preferences: ${colorPrefs}
+- Brand Personality: ${brandPersonality}
+
+BRAND CONTEXT:
+Brand Story: ${formData.brandStory || '[Not provided]'}
+Visual Inspiration: ${formData.visualInspiration || '[Not provided]'}
+Existing Assets: ${formData.brandAssets || '[Not provided]'}
+
+BRAND STRATEGY REQUIREMENTS:
+1. Develop complete brand identity system aligned with ${formData.visualStyle || 'specified visual style'}
+2. Create color psychology strategy using ${colorPrefs} preferences
+3. Design visual hierarchy and typography system for ${formData.industry || 'industry'} sector
+4. Integrate ${brandPersonality} personality traits into visual design language
+5. Create brand application guidelines for digital and print media
+
+DELIVERABLES:
+✅ Complete brand identity system (logo, colors, typography, imagery style)
+✅ Brand voice and tone guidelines with messaging framework
+✅ Visual design system with component library and style guide
+✅ Brand application strategy across all customer touchpoints
+✅ Future brand evolution roadmap with scalability considerations
+        `;
+    }
+
+    function generateTechnicalPrompt() {
+        const requiredFeatures = Array.isArray(formData.requiredFeatures) ? formData.requiredFeatures.join(', ') : (formData.requiredFeatures || '[Not specified]');
+        
+        return `
+⚡ COMPREHENSIVE TECHNICAL ARCHITECTURE & DEVELOPMENT STRATEGY
+
+TECHNICAL SPECIFICATIONS:
+- Required Features: ${requiredFeatures}
+- Performance Goals: ${formData.performanceGoals || '[Not specified]'}
+- Mobile Importance: ${formData.mobileImportance || '8'}/10
+- Hosting Preference: ${formData.hostingPreferences || '[Not specified]'}
+
+INTEGRATION & SECURITY:
+Integration Requirements: ${formData.integrationRequirements || '[Not provided]'}
+Security Requirements: ${formData.securityRequirements || '[Not provided]'}
+
+TECHNICAL STRATEGY REQUIREMENTS:
+1. Design scalable architecture supporting ${requiredFeatures} functionality
+2. Implement ${formData.performanceGoals || 'optimized'} performance standards
+3. Create mobile-first responsive framework (Priority: ${formData.mobileImportance || '8'}/10)
+4. Plan integration strategy for specified third-party services
+5. Establish security and compliance framework for ${formData.industry || 'industry'}
+
+DELIVERABLES:
+✅ Complete technical architecture blueprint with technology stack recommendations
+✅ Performance optimization strategy targeting Core Web Vitals excellence
+✅ Mobile-first responsive design framework with progressive enhancement
+✅ Integration architecture for CRM, payment, and marketing tool connections
+✅ Security implementation plan with compliance framework (GDPR, accessibility)
+✅ Hosting and infrastructure recommendations with scalability planning
+        `;
+    }
+
+    function generateContentPrompt() {
+        const contentGoals = Array.isArray(formData.contentGoals) ? formData.contentGoals.join(', ') : (formData.contentGoals || '[Not specified]');
+        const contentTypes = Array.isArray(formData.contentTypes) ? formData.contentTypes.join(', ') : (formData.contentTypes || '[Not specified]');
+        
+        return `
+📝 COMPREHENSIVE CONTENT STRATEGY & SEO OPTIMIZATION
+
+CONTENT SPECIFICATIONS:
+- Primary Goals: ${contentGoals}
+- Preferred Types: ${contentTypes}
+- Update Frequency: ${formData.contentUpdateFrequency || '[Not specified]'}
+
+SEO & MARKETING CONTEXT:
+Target Keywords: ${formData.targetKeywords || '[Not provided]'}
+Existing Resources: ${formData.contentResources || '[Not provided]'}
+Content Challenges: ${formData.contentChallenges || '[Not provided]'}
+
+CONTENT STRATEGY REQUIREMENTS:
+1. Develop comprehensive content strategy aligned with ${contentGoals} objectives
+2. Create ${contentTypes} content framework with editorial calendar
+3. Implement SEO optimization strategy targeting specified keywords
+4. Design content creation workflow addressing identified challenges
+5. Establish content performance measurement and optimization protocols
+
+DELIVERABLES:
+✅ Complete content strategy with editorial calendar and topic clustering
+✅ SEO optimization plan with keyword research and on-page optimization guide
+✅ Content creation templates and guidelines for ${contentTypes}
+✅ Content distribution and promotion strategy across relevant channels
+✅ Performance measurement framework with content analytics and KPI tracking
+        `;
+    }
+
+    function generateTimelinePrompt() {
+        const launchDrivers = Array.isArray(formData.launchDrivers) ? formData.launchDrivers.join(', ') : (formData.launchDrivers || '[Not specified]');
+        const budgetPriorities = Array.isArray(formData.budgetPriorities) ? formData.budgetPriorities.join(', ') : (formData.budgetPriorities || '[Not specified]');
+        
+        return `
+📅 COMPREHENSIVE PROJECT TIMELINE & BUDGET OPTIMIZATION
+
+PROJECT SPECIFICATIONS:
+- Launch Timeline: ${formData.launchUrgency || '[Not specified]'}
+- Driving Factors: ${launchDrivers}
+- Project Approach: ${formData.projectPhasing || '[Not specified]'}
+- Budget Range: ${formData.budgetRange || '[Not specified]'}
+- Budget Priorities: ${budgetPriorities}
+
+ADDITIONAL CONTEXT:
+${formData.additionalContext || '[No additional context provided]'}
+
+PROJECT MANAGEMENT REQUIREMENTS:
+1. Create detailed project timeline aligned with ${formData.launchUrgency || 'specified'} launch preference
+2. Develop resource allocation strategy optimizing ${budgetPriorities} priorities
+3. Design project phasing approach using ${formData.projectPhasing || 'recommended'} methodology
+4. Plan risk mitigation strategy addressing ${launchDrivers} driving factors
+5. Establish project success metrics and milestone validation framework
+
+DELIVERABLES:
+✅ Detailed project timeline with critical path analysis and milestone tracking
+✅ Budget allocation strategy with ROI optimization across priority areas
+✅ Resource planning with team structure and skill requirements
+✅ Risk management plan with contingency strategies for timeline challenges
+✅ Project success measurement framework with quality assurance protocols
+        `;
+    }
+
+    function generateMasterPrompt() {
+        return `
+🎯 MASTER STRATEGIC INTEGRATION & IMPLEMENTATION ROADMAP
+
+EXECUTIVE SUMMARY:
+Company: ${formData.companyName || '[Company Name]'}
+Industry: ${formData.industry || '[Industry]'}
+Primary Objective: ${formData.primaryGoal || '[Primary Goal]'}
+Timeline: ${formData.launchUrgency || '[Timeline Not Specified]'}
+Investment: ${formData.budgetRange || '[Budget Not Specified]'}
+
+STRATEGIC INTEGRATION REQUIREMENTS:
+This comprehensive analysis integrates all strategic elements:
+- Business strategy and market positioning
+- Customer psychology and user experience optimization
+- Brand identity and visual design systems
+- Technical architecture and performance optimization
+- Content strategy and SEO implementation
+- Project timeline and budget optimization
+
+MASTER INTEGRATION OBJECTIVES:
+1. Synthesize all strategic recommendations into unified implementation plan
+2. Identify and resolve conflicts between different strategic elements
+3. Optimize resource allocation across business, design, technical, and marketing initiatives
+4. Create integrated success measurement framework connecting all strategic goals
+5. Develop risk mitigation strategies for comprehensive project success
+
+COMPREHENSIVE DELIVERABLES:
+✅ Executive Strategic Brief with integrated business case and ROI projections
+✅ Master Implementation Roadmap with dependencies, milestones, and resource allocation
+✅ Unified Success Measurement Framework with KPIs across all strategic elements
+✅ Risk Assessment and Mitigation Strategy for integrated project challenges
+✅ Future Growth and Scalability Planning with strategic evolution roadmap
+
+TARGET OUTCOMES:
+- Achieve top 10% digital presence positioning in ${formData.industry || 'industry'}
+- Enable 40% improvement in primary business performance metrics
+- Create sustainable competitive advantages lasting 3+ years
+- Establish foundation for long-term growth and market expansion
+- Generate measurable ROI within 12 months of implementation
+
+STRATEGIC SUCCESS CRITERIA:
+- 95%+ client satisfaction through comprehensive strategic excellence
+- Measurable achievement of specified business objectives
+- Technical performance exceeding industry benchmarks
+- Brand recognition improvement of 200%+ in target market
+- Scalable foundation supporting 3x business growth potential
+        `;
+    }
+
+    function calculateCompletionScore() {
+        const totalPossibleFields = 25; // Approximate number of key fields
+        const completedFields = Object.keys(formData).length;
+        return Math.round((completedFields / totalPossibleFields) * 100);
+    }
+
+    function showNotification(message, type = 'info') {
+        console.log(`📢 Notification (${type}):`, message);
+        
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 7000);
+    }
+
+    // Debug helper
+    console.log('📝 Complete 6-step form script loaded successfully');
+    </script>
 </body>
 </html>

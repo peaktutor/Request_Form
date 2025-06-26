@@ -520,3 +520,43 @@ body {
     animation: none;
   }
 }
+/* Fix for scroll issues - add to main.css */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.main {
+  padding: var(--space-16) 0;
+  min-height: auto; /* Remove the calc height */
+  overflow: visible;
+}
+
+.form-container {
+  background: var(--neutral-0);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--neutral-200);
+  overflow: visible; /* Changed from hidden */
+  position: relative;
+  max-height: none; /* Remove any height restrictions */
+}
+
+.requirements-form {
+  position: relative;
+  min-height: auto; /* Remove fixed height */
+  overflow: visible;
+}
+
+.form-step {
+  display: none;
+  padding: var(--space-10) var(--space-8);
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: auto;
+  overflow: visible;
+}
+
+.form-step.active {
+  display: block;
+}
