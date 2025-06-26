@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Requirements Intelligence System</title>
+    <meta name="description" content="AI-powered website requirements gathering that prevents the 70% project failure rate">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modern font stack -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">
+                    <span class="icon">🚀</span>
+                    Website Requirements Intelligence
+                </h1>
+                <p class="header-subtitle">
+                    AI-powered strategy generation that prevents 70% of project failures
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Progress Header -->
+            <div class="progress-header">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" style="width: 15%"></div>
+                    </div>
+                    <span class="progress-text">
+                        <span id="currentStep">1</span> of <span id="totalSteps">6</span> sections
+                    </span>
+                </div>
+                <div class="time-estimate">
+                    <span class="icon">⏱️</span>
+                    <span id="timeEstimate">8-12 minutes remaining</span>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <form id="requirementsForm" class="requirements-form" novalidate>
+                    
+                    <!-- Step 1: Business Foundation -->
+                    <section class="form-step active" id="step-1" data-step="1">
+                        <div class="step-header">
+                            <h2 class="step-title">
+                                <span class="step-number">01</span>
+                                Business Foundation 🎯
+                            </h2>
+                            <p class="step-description">
+                                Let's understand your business context and strategic goals
+                            </p>
+                        </div>
+
+                        <div class="form-grid">
+                            <!-- Simple Decisions (Tier 1) -->
+                            <div class="form-section">
+                                <h3 class="section-title">Quick Overview</h3>
+                                
+                                <div class="field-group">
+                                    <label for="companyName" class="field-label required">
+                                        Company Name
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="companyName" 
+                                        name="companyName" 
+                                        class="field-input" 
+                                        required
+                                        autocomplete="organization"
+                                        placeholder="Enter your company name"
+                                    >
+                                    <div class="field-error" id="companyName-error"></div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="industry" class="field-label required">
+                                        Industry
+                                    </label>
+                                    <select id="industry" name="industry" class="field-select" required>
+                                        <option value="">Select your industry</option>
+                                        <option value="technology">Technology & Software</option>
+                                        <option value="healthcare">Healthcare & Medical</option>
+                                        <option value="finance">Finance & Banking</option>
+                                        <option value="retail">Retail & E-commerce</option>
+                                        <option value="manufacturing">Manufacturing</option>
+                                        <option value="real-estate">Real Estate</option>
+                                        <option value="education">Education & Training</option>
+                                        <option value="professional-services">Professional Services</option>
+                                        <option value="hospitality">Hospitality & Tourism</option>
+                                        <option value="nonprofit">Non-profit</option>
+                                        <option value="government">Government</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="field-error" id="industry-error"></div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="businessSize" class="field-label required">
+                                        Business Size
+                                    </label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="businessSize" value="solo" required>
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Solo / Freelancer</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="businessSize" value="small" required>
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Small Team (2-10)</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="businessSize" value="medium" required>
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Medium Business (11-50)</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="businessSize" value="large" required>
+                                            <span class="radio-button"></span>
+                                            <span class="radio-label">Large Business (50+)</span>
+                                        </label>
+                                    </div>
+                                    <div class="field-error" id="businessSize-error"></div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="primaryGoal" class="field-label required">
+                                        Primary Website Goal
+                                    </label>
+                                    <select id="primaryGoal" name="primaryGoal" class="field-select" required>
+                                        <option value="">What's your main objective?</option>
+                                        <option value="lead-generation">Generate Leads & Inquiries</option>
+                                        <option value="e-commerce">Sell Products Online</option>
+                                        <option value="brand-awareness">Build Brand Awareness</option>
+                                        <option value="information">Provide Information & Resources</option>
+                                        <option value="bookings">Accept Bookings & Appointments</option>
+                                        <option value="portfolio">Showcase Work & Portfolio</option>
+                                        <option value="community">Build Community & Engagement</option>
+                                        <option value="support">Customer Support & Service</option>
+                                    </select>
+                                    <div class="field-error" id="primaryGoal-error"></div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="yearsInBusiness" class="field-label">
+                                        Years in Business
+                                    </label>
+                                    <div class="slider-container">
+                                        <input 
+                                            type="range" 
+                                            id="yearsInBusiness" 
+                                            name="yearsInBusiness" 
+                                            min="0" 
+                                            max="50" 
+                                            value="5"
+                                            class="slider"
+                                        >
+                                        <div class="slider-labels">
+                                            <span>New</span>
+                                            <span id="yearsValue">5 years</span>
+                                            <span>50+ years</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Deep Context (Tier 2) -->
+                            <div class="form-section">
+                                <h3 class="section-title">Strategic Context</h3>
+                                <p class="section-description">
+                                    The more detail you provide, the better our AI can create targeted strategies
+                                </p>
+                                
+                                <div class="field-group">
+                                    <label for="businessStory" class="field-label">
+                                        Complete Business Story & Strategic Context
+                                        <span class="field-hint">Recommended 300+ words</span>
+                                    </label>
+                                    <textarea 
+                                        id="businessStory" 
+                                        name="businessStory" 
+                                        class="field-textarea" 
+                                        rows="6"
+                                        placeholder="Tell us your company history, mission, values, founding story, major milestones, current market position, and what makes you unique in the industry..."
+                                    ></textarea>
+                                    <div class="field-enhancement">
+                                        <span class="icon">🤖</span>
+                                        This enables AI to research your industry thoroughly and position your website strategically
+                                    </div>
+                                    <div class="character-count">
+                                        <span id="businessStory-count">0</span> characters
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="competitiveIntelligence" class="field-label">
+                                        Competitive Intelligence & Market Positioning
+                                    </label>
+                                    <textarea 
+                                        id="competitiveIntelligence" 
+                                        name="competitiveIntelligence" 
+                                        class="field-textarea" 
+                                        rows="5"
+                                        placeholder="Who are your main competitors? What do they do well? What gaps do they have? Include competitor websites, pricing strategies, and market positioning. What advantages do you have?"
+                                    ></textarea>
+                                    <div class="field-enhancement">
+                                        <span class="icon">📊</span>
+                                        Required for: Competitive analysis, market gap identification, differentiation strategy
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="businessModel" class="field-label">
+                                        Revenue Model & Growth Strategy
+                                    </label>
+                                    <textarea 
+                                        id="businessModel" 
+                                        name="businessModel" 
+                                        class="field-textarea" 
+                                        rows="5"
+                                        placeholder="How do you make money? What's your pricing structure? Customer lifetime value? Growth goals for 1-3 years? Expansion plans? New market opportunities?"
+                                    ></textarea>
+                                    <div class="field-enhancement">
+                                        <span class="icon">📈</span>
+                                        Enables: ROI projections, scalability planning, feature prioritization
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Step 2: Target Audience -->
+                    <section class="form-step" id="step-2" data-step="2">
+                        <div class="step-header">
+                            <h2 class="step-title">
+                                <span class="step-number">02</span>
+                                Target Audience & User Experience 👥
+                            </h2>
+                            <p class="step-description">
+                                Understanding your customers drives everything else
+                            </p>
+                        </div>
+
+                        <div class="form-grid">
+                            <!-- Simple Decisions -->
+                            <div class="form-section">
+                                <h3 class="section-title">Customer Overview</h3>
+                                
+                                <div class="field-group">
+                                    <label for="customerAge" class="field-label">
+                                        Primary Customer Age Range
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="customerAge" value="18-25">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">18-25 (Gen Z)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="customerAge" value="26-35">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">26-35 (Millennials)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="customerAge" value="36-50">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">36-50 (Gen X)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="customerAge" value="51-65">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">51-65 (Boomers)</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="customerAge" value="65+">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">65+ (Seniors)</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="techSavviness" class="field-label">
+                                        Customer Tech Comfort Level
+                                    </label>
+                                    <select id="techSavviness" name="techSavviness" class="field-select">
+                                        <option value="">Select tech comfort level</option>
+                                        <option value="beginner">Beginner - Prefers simple, obvious interfaces</option>
+                                        <option value="intermediate">Intermediate - Comfortable with most apps</option>
+                                        <option value="advanced">Advanced - Expects sophisticated features</option>
+                                        <option value="mixed">Mixed - Diverse tech comfort levels</option>
+                                    </select>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="contactPreference" class="field-label">
+                                        Preferred Contact Methods
+                                    </label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contactPreference" value="phone">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Phone Calls</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contactPreference" value="email">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Email</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contactPreference" value="form">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Contact Forms</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contactPreference" value="chat">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Live Chat</span>
+                                        </label>
+                                        <label class="checkbox-option">
+                                            <input type="checkbox" name="contactPreference" value="social">
+                                            <span class="checkbox-button"></span>
+                                            <span class="checkbox-label">Social Media</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Deep Context -->
+                            <div class="form-section">
+                                <h3 class="section-title">Customer Deep Analysis</h3>
+                                
+                                <div class="field-group">
+                                    <label for="customerProfiles" class="field-label">
+                                        Detailed Customer Profiles
+                                    </label>
+                                    <textarea 
+                                        id="customerProfiles" 
+                                        name="customerProfiles" 
+                                        class="field-textarea" 
+                                        rows="5"
+                                        placeholder="Describe your ideal customers in detail: demographics, psychographics, lifestyle, income level, education, technology comfort, shopping habits..."
+                                    ></textarea>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="customerPainPoints" class="field-label">
+                                        Customer Pain Points & Challenges
+                                    </label>
+                                    <textarea 
+                                        id="customerPainPoints" 
+                                        name="customerPainPoints" 
+                                        class="field-textarea" 
+                                        rows="4"
+                                        placeholder="What specific problems do your customers face? What frustrates them? What keeps them up at night?"
+                                    ></textarea>
+                                </div>
+
+                                <div class="field-group">
+                                    <label for="customerJourney" class="field-label">
+                                        Customer Journey & Decision Process
+                                    </label>
+                                    <textarea 
+                                        id="customerJourney" 
+                                        name="customerJourney" 
+                                        class="field-textarea" 
+                                        rows="4"
+                                        placeholder="How do customers discover you? What's their research process? How long does it take them to decide? Who influences their decisions?"
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Additional steps would continue here... -->
+                    
+                    <!-- Navigation -->
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" disabled>
+                            ← Previous
+                        </button>
+                        <div class="nav-info">
+                            <span class="save-status" id="saveStatus">
+                                <span class="icon">💾</span>
+                                Auto-saved
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="nextBtn">
+                            Continue →
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Website Requirements Intelligence System</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/form-handler.js"></script>
+    <script type="module" src="assets/js/validation.js"></script>
+    <script type="module" src="assets/js/storage.js"></script>
+</body>
+</html>

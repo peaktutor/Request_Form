@@ -1,0 +1,125 @@
+﻿/* Component Library - Reusable UI Components */
+
+/* Button Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 44px; /* Touch-friendly */
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary-600);
+  color: var(--neutral-0);
+  border-color: var(--primary-600);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-700);
+  border-color: var(--primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--neutral-0);
+  color: var(--neutral-700);
+  border-color: var(--neutral-300);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--neutral-50);
+  border-color: var(--neutral-400);
+}
+
+.btn-success {
+  background: var(--success-600);
+  color: var(--neutral-0);
+  border-color: var(--success-600);
+}
+
+.btn-success:hover:not(:disabled) {
+  background: var(--success-700);
+  border-color: var(--success-700);
+}
+
+/* Notification Components */
+.notification {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  max-width: 400px;
+  padding: var(--space-4);
+  border-radius: var(--border-radius);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  z-index: 1000;
+  animation: slideInRight var(--transition-normal) ease-out;
+}
+
+.notification-info {
+  background: var(--primary-50);
+  color: var(--primary-800);
+  border: 1px solid var(--primary-200);
+}
+
+.notification-success {
+  background: var(--success-50);
+  color: var(--success-800);
+  border: 1px solid var(--success-200);
+}
+
+.notification-warning {
+  background: var(--warning-50);
+  color: var(--warning-800);
+  border: 1px solid var(--warning-200);
+}
+
+.notification-error {
+  background: var(--error-50);
+  color: var(--error-800);
+  border: 1px solid var(--error-200);
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neutral-300);
+  border-radius: 50%;
+  border-top-color: var(--primary-600);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile Responsive Components */
+@media (max-width: 767px) {
+  .btn {
+    min-height: 48px;
+    padding: var(--space-4) var(--space-6);
+  }
+  
+  .notification {
+    left: var(--space-4);
+    right: var(--space-4);
+    max-width: none;
+  }
+}
